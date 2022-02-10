@@ -3,7 +3,6 @@ const User = require('../models/UserModel')
 
 exports.store  =  async (req, res) => {  
     const userData = req.body     
-    console.log(userData)
     await User.create(userData).then((result)=>{
         return res.status(200).json({
             result
@@ -15,7 +14,6 @@ exports.store  =  async (req, res) => {
 
 exports.show  =  async (req, res) => {  
     const {id} = req.params
-
     await User.findByPk(id).then( (result) => {
         return res.status(200).json(result)
     })
@@ -26,17 +24,13 @@ exports.show  =  async (req, res) => {
 
 exports.index  =  async (req, res) => {  
     const {search , page=1,per_page=10, order='asc',order_field='name'} = req.query
-    
     let where = {}
-
     if(search){
         where.name = {
             [Op.like] : `%${search}%`
         }
     }
-
     const offset = ((page*per_page)-per_page)
-
     await User.findAll({
         where,
         order: [
