@@ -4,9 +4,7 @@ const User = require('../models/UserModel')
 exports.store  =  async (req, res) => {  
     const userData = req.body     
     await User.create(userData).then((result)=>{
-        return res.status(200).json({
-            result
-        })
+        return res.status(200).json(result)
     }).catch((error)=>{
         return res.status(400).json(error)
     })
