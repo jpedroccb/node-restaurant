@@ -4,20 +4,23 @@
     "password": null,
     "database": "project_restaurant",
     "host": "127.0.0.1",
-    "dialect": "mariadb"
+    "dialect": "mariadb",
+    "port": 3306
   },
   "test": {
     "username": "root",
     "password": null,
     "database": "project_restaurant",
     "host": "127.0.0.1",
-    "dialect": "mariadb"
+    "dialect": "mariadb",
+    "port": 3306
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "project_restaurant",
     "host": "127.0.0.1",
-    "dialect": "mariadb"
+    "dialect": "mariadb",
+    "port": 3306
   }
 }

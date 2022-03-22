@@ -2,7 +2,8 @@ const {Op} = require('sequelize')
 const User = require('../models/UserModel')
 
 exports.store  =  async (req, res) => {  
-    const userData = req.body     
+    const userData = req.body    
+    console.log(userData) 
     await User.create(userData).then((result)=>{
         return res.status(200).json(result)
     }).catch((error)=>{

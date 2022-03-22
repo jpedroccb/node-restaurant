@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const UsersController = require('../api/controllers/UsersController') 
+const UsersController = require('../api/User/UsersController') 
 const { body } = require('express-validator');
-const {UserValidator} = require('../api/validator/users/UserCreateValidator')
+const {UserValidator} = require('../api/User/Validators/UserCreateValidator')
 
 router.post('/', UserValidator ,UsersController.store);
 router.get('/', UsersController.index);

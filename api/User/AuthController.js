@@ -1,6 +1,6 @@
 const {Op} = require('sequelize')
 const User = require('../models/UserModel')
-const {generateJwt} = require('../services/JwtService')
+const {generateJwt} = require('../Util/JwtUtil')
 
 exports.login  =  async (req, res) => {  
     const {email, password} = req.body
