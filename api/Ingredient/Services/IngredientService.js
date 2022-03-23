@@ -1,4 +1,3 @@
-const Ingredient = require('../../models/IngredietModel')
 const IngredientRepository = require('../Repositories/IngredientRepository')
 
 const store = async (ingredientCreateData) => {

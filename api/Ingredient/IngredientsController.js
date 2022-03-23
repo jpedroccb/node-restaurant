@@ -1,14 +1,26 @@
 const IngredientService = require('./Services/IngredientService')
 
 exports.store = async (req , res) => {
-    return res.status(200).send(await IngredientService.store(req.body))
+    try{
+        return res.status(200).send(await IngredientService.store(req.body))
+    }catch(error){
+        return res.status(500).send(error)
+    }
 }
 
 exports.index = async (req , res) => {
-    return res.status(200).json(await IngredientService.index(req.query))
+    try {
+        return res.status(200).json(await IngredientService.index(req.query))
+    } catch (error) {
+        return res.status(500).send(error)
+    }
 }
 
 exports.show = async (req , res) => {
-    return res.status(200).send(await IngredientService.show(req.params.id))
+    try {
+        return res.status(200).send(await IngredientService.show(req.params.id))
+    } catch (error) {
+        return res.status(500).send(error)
+    }
 }
 

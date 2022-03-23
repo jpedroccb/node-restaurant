@@ -1,7 +1,11 @@
 const Ingredient = require('../../models/IngredietModel')
 
 const storeIngredient = async (ingredientCreateData) => {
-    await Ingredient.create(ingredientCreateData)
+    try{
+        await Ingredient.create(ingredientCreateData)
+    }catch(error){
+        throw {message: "HasServerError"}
+    }
 }
 
 const findAllIngredientsWithFilters = async (filters) => {
@@ -14,19 +18,26 @@ const findAllIngredientsWithFilters = async (filters) => {
         }
     }
     const offset = ((page*per_page)-per_page)
-
-    return await Ingredient.findAll({
-        where,
-        order: [
-            [order_field, order]
-        ],
-        offset : offset,
-        limit: parseInt(per_page)
-    })
+    try{
+        return await Ingredient.findAll({
+            where,
+            order: [
+                [order_field, order]
+            ],
+            offset : offset,
+            limit: parseInt(per_page)
+        })
+    }catch(error){
+        throw {message: "HasServerError"} 
+    }
 }
 
 const getByIngredientId = async (ingredientId) => {
-    return await Ingredient.findByPk(ingredientId)
+    try {
+        return await Ingredient.findByPk(ingredientId)
+    } catch (error) {
+        throw {message: "HasServerError"}
+    }
 }
 
 module.exports = {
