@@ -1,4 +1,4 @@
-const IngredientRepository = require('../Repositories/IngredientRepository')
+const IngredientRepository = require('../Repository/IngredientRepository')
 
 const store = async (ingredientCreateData) => {
     return await IngredientRepository.storeIngredient(ingredientCreateData)
@@ -12,8 +12,13 @@ const show = async (ingredientId) => {
     return await IngredientRepository.getByIngredientId(ingredientId)
 }
 
+const update = async (ingredientUpdateData, ingredientId) => {
+    return await IngredientRepository.updateIngredient(ingredientUpdateData, ingredientId)
+}
+
 module.exports = {
     store,
     index,
-    show
+    show,
+    update
 }

@@ -7,5 +7,6 @@ const {IngredientCreateValidator} = require('../api/Ingredient/Validator/Ingredi
 router.post('/', IngredientCreateValidator, IngredientsController.store);
 router.get('/', IngredientsController.index);
 router.get('/:id', IngredientsController.show);
+router.put('/:id', IngredientsController.update);
 
 module.exports = router

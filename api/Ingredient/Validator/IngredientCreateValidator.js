@@ -3,7 +3,7 @@ const validator = require('express-joi-validation').createValidator({
     passError: true
 })
 const querySchema = Joi.object({
-  name: Joi.string().min(4).required(),
+  name: Joi.string().required(),
   price: Joi.number().required(),
 })
 

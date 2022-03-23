@@ -1,4 +1,4 @@
-const IngredientService = require('./Services/IngredientService')
+const IngredientService = require('./Service/IngredientService')
 
 exports.store = async (req , res) => {
     try{
@@ -19,6 +19,15 @@ exports.index = async (req , res) => {
 exports.show = async (req , res) => {
     try {
         return res.status(200).send(await IngredientService.show(req.params.id))
+    } catch (error) {
+        return res.status(500).send(error)
+    }
+}
+
+exports.update = async (req, res) => {
+    try {
+        await IngredientService.update(req.body, req.params.id)
+        return res.status(200).send()
     } catch (error) {
         return res.status(500).send(error)
     }

@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const sequelize = require('./config/connection');
 const app = express();
 const port = 3333
 const AuthController = require('./api/User/AuthController') 
 const authenticator = require('./api/middlewares/AuthMiddleware')
 const users = require('./routes/UserRoute')
 const ingredients = require('./routes/IngredientRoute')
+const recipes = require('./routes/RecipeRoute')
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
@@ -19,6 +21,9 @@ app.use('/user', users)
 
 app.use('/ingredient', authenticator);
 app.use('/ingredient', ingredients)
+
+app.use('/recipe', authenticator);
+app.use('/recipe', recipes)
 
 app.use((err,req,res,next) => {
   if (err && err.error && err.error.isJoi) {

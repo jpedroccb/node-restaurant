@@ -40,8 +40,21 @@ const getByIngredientId = async (ingredientId) => {
     }
 }
 
+const updateIngredient = async (ingredientUpdateData, ingredientId) => {
+    try {
+        return await Ingredient.update(ingredientUpdateData,{
+            where: {
+                id: ingredientId
+              }
+            })
+    } catch (error) {
+        throw {message: "HasServerError"}
+    }
+}
+
 module.exports = {
     storeIngredient,
     findAllIngredientsWithFilters,
-    getByIngredientId
+    getByIngredientId,
+    updateIngredient
 }
