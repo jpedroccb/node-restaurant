@@ -9,5 +9,5 @@ const querySchema = Joi.object({
 })
 
 module.exports = {
-    UserValidator: validator.body(querySchema)
+  UserCreateValidator: validator.body(querySchema)
 }
