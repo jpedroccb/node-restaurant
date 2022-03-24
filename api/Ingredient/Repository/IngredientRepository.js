@@ -2,7 +2,7 @@ const Ingredient = require('../../models/IngredietModel')
 
 const storeIngredient = async (ingredientCreateData) => {
     try{
-        await Ingredient.create(ingredientCreateData)
+        return await Ingredient.create(ingredientCreateData)
     }catch(error){
         throw {message: "HasServerError"}
     }
