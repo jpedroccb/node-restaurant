@@ -1,2 +1,3 @@
-[] Adicionar a camada de Services aos controllers
+[x] Adicionar a camada de Services aos controllers
 [] Criar um serviço de páginação para os index
+[] Não permitir que seja enviado ingredientes já adicionados na receita
