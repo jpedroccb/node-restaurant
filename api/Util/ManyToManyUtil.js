@@ -1,4 +1,8 @@
 const verifyDeletedRows = (originalData, newData, fieldReference) => {
+    if(originalData.length == 0 || newData.length == 0 || fieldReference){
+        return []
+    }
+    
     const newDataObject = newData.reduce((acc,cur)=> {
         if(cur[fieldReference]){
             return {
