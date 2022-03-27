@@ -8,9 +8,12 @@ const authenticator = require('./api/middlewares/AuthMiddleware')
 const users = require('./routes/UserRoute')
 const ingredients = require('./routes/IngredientRoute')
 const recipes = require('./routes/RecipeRoute')
+const dbStart = require('./config/dbStart')
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
+
+dbStart().then()
 
 app.use(bodyParser.json())
 

@@ -10,6 +10,4 @@ const Recipe = sequelize.define('recipes', {
     modelName: 'Recipe'
 })
 
-Recipe.sync({alter: true})
-
 module.exports = Recipe

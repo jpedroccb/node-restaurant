@@ -17,6 +17,4 @@ const User = sequelize.define('users', {
     modelName: 'User'
   })
 
-User.sync({alter: true})
-
 module.exports = User

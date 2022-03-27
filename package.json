@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "migration:run": "node api/models/migrations/run.js"
   }
 }

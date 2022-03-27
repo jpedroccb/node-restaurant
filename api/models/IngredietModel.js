@@ -16,6 +16,4 @@ const Ingredient = sequelize.define('ingredients', {
   modelName: 'Ingredients'
 })
 
-Ingredient.sync({ alter: true });
-
 module.exports = Ingredient

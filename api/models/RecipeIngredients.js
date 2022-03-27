@@ -34,8 +34,5 @@ const RecipeIngredients = sequelize.define('recipe_ingredients', {
   modelName: 'RecipeIngredients',
   unique: false
 })
-Ingredient.belongsToMany(Recipe, { through: RecipeIngredients})
-Recipe.belongsToMany(Ingredient, { through: RecipeIngredients})
-RecipeIngredients.sync({ alter: true });
 
 module.exports = RecipeIngredients
