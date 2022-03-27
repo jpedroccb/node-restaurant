@@ -1,4 +1,4 @@
-const { ingredientsDataToSeed } = require("../../Ingredient/Dto/IngredientDto")
+const { ingredientsDataToSeed } = require("../../http/Ingredient/Dto/IngredientDto")
 const Ingredient = require("../IngredietModel")
 
 const ingreditSeed = async () => {

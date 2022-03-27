@@ -1,5 +1,5 @@
 const {Op} = require('sequelize')
-const User = require('../models/UserModel')
+const User = require('../../Models/UserModel')
 
 exports.store  =  async (req, res) => {  
     const userData = req.body    

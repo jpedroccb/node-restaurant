@@ -1,4 +1,4 @@
-const Ingredient = require('../../models/IngredietModel')
+const Ingredient = require('../../../Models/IngredietModel')
 
 const storeIngredient = async (ingredientCreateData) => {
     try{

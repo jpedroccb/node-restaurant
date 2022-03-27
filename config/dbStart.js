@@ -1,5 +1,5 @@
-const migrationsExecute = require('../api/models/migrations/run')
-const seedersExecute = require('../api/models/seeders/index')
+const migrationsExecute = require('../api/Models/migrations/run')
+const seedersExecute = require('../api/Models/seeders/index')
 
 const dbStart = async () => {
     try {

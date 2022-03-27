@@ -1,6 +1,6 @@
 const RecipeRepository = require('../Repository/RecipeRepository')
 const RecipeFactory = require('../Factory/RecipeFactory')
-const ManyToManyUtil = require('../../Util/ManyToManyUtil')
+const ManyToManyUtil = require('../../../Util/ManyToManyUtil')
 
 const store = async (recipeCreateData) => {
     const recipeCreatted = await RecipeRepository.storeRecipe(recipeCreateData.name)

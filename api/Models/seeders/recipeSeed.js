@@ -1,5 +1,5 @@
-const RecipeService = require('../../Recipe/Service/RecipeService')
-const {recipeDataToSeed} = require('../../Recipe/Dto/recipeDto')
+const RecipeService = require('../../http/Recipe/Service/RecipeService')
+const {recipeDataToSeed} = require('../../http/Recipe/Dto/recipeDto')
 const Recipe = require('../RecipeModel')
 const recipeSeed = async () => {
     const haveRecipe = await Recipe.findByPk(1)

@@ -1,6 +1,6 @@
-const Ingredient = require('../../models/IngredietModel')
-const RecipeIngredients = require('../../models/RecipeIngredients')
-const Recipe = require('../../models/RecipeModel')
+const Ingredient = require('../../../Models/IngredietModel')
+const RecipeIngredients = require('../../../Models/RecipeIngredients')
+const Recipe = require('../../../Models/RecipeModel')
 const {Op} = require('sequelize')
 
 const storeRecipe = async (recipeName) => {

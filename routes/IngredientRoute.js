@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const IngredientsController = require('../api/Ingredient/IngredientsController') 
+const IngredientsController = require('../api/http/Ingredient/IngredientsController') 
 const { body } = require('express-validator');
-const {IngredientCreateValidator} = require('../api/Ingredient/Validator/IngredientCreateValidator')
+const {IngredientCreateValidator} = require('../api/http/Ingredient/Validator/IngredientCreateValidator')
 
 router.post('/', IngredientCreateValidator, IngredientsController.store);
 router.get('/', IngredientsController.index);
