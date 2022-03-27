@@ -1,4 +1,4 @@
-const ingredientsSeed = [
+const ingredientsDataToSeed = [
     {
         id: 1,
         name: 'Trigo',
@@ -17,5 +17,5 @@ const ingredientsSeed = [
 ]
 
 module.exports = {
-    ingredientsSeed
+    ingredientsDataToSeed
 }
