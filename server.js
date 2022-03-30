@@ -8,6 +8,7 @@ const authenticator = require('./api/Middlewares/AuthMiddleware')
 const users = require('./routes/UserRoute')
 const ingredients = require('./routes/IngredientRoute')
 const recipes = require('./routes/RecipeRoute')
+const menu = require('./routes/MenuRoute')
 const dbStart = require('./config/dbStart')
 
 app.use(bodyParser.urlencoded({extended:false}));
@@ -27,6 +28,8 @@ app.use('/ingredient', ingredients)
 
 app.use('/recipe', authenticator);
 app.use('/recipe', recipes)
+
+app.use('/menu', menu)
 
 app.use((err,req,res,next) => {
   if (err && err.error && err.error.isJoi) {
